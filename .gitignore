@@ -10,6 +10,7 @@
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb
+node_modules
 
 # Ignore all logfiles and tempfiles.
 /log/*
