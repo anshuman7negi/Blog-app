@@ -47,20 +47,45 @@ This project is built using the following technologies:
 
 <!-- GETTING STARTED -->
 
-## Getting Started <a name="getting-started"></a>
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-Before running this project, make sure you have the following prerequisites installed:
+In order to run this project you need:
+Ruby version 3.2.2 installed
+Rails version 7.0.8 installed
+PostgreSQL version 15.3 installed
 
-- Ruby
-- Node.js and npm.
-- rails
-
-### Installation <a name="installation"></a>
+### Setup
 
 Clone this repository to your desired folder:
-   git clone https://github.com/anshuman7negi/Blog-app.git
+
+```sh
+  cd rails_blog_app
+  git clone https://github.com/anshuman7negi/Blog-app.git
+```
+
+### Install
+
+Install this project with:
+
+## For windows
+```sh
+  ruby installer
+  rails installer
+  postgres installer
+```
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
