@@ -92,9 +92,9 @@ To run the project, execute the following command:
 ## 👥 Authors <a name="authors"></a>>
 
 #### 👤 Anshuman Singh Negi
-GitHub: @anshuman7negi<br>
-Twitter: @AnshumanNegi108<br>
-LinkedIn: Anshuman Singh Negi<br>
+- GitHub: [@githubhandle](https://github.com/anshuman7negi)
+- Twitter: [@twitterhandle](https://twitter.com/AnshumanNegi108)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/anshuman-singh-negi-33779a224/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
