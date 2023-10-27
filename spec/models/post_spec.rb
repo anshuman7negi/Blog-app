@@ -44,6 +44,26 @@ RSpec.describe Post, type: :model do
       subject.likes_counter = -1
       expect(subject).to_not be_valid
     end
+
+    it 'is not valid with a title > 250 characters' do
+      subject.title = 'A' * 251
+      expect(subject).not_to be_valid
+    end
+
+    it 'is valid with a title < 250 characters' do
+      subject.title = 'A' * 250
+      expect(subject).to be_valid
+    end
+
+    it 'is not valid with a text > 5000 characters' do
+      subject.text = 'Valid Text' * 1001
+      expect(subject).to be_invalid
+    end
+
+    it 'is valid with a text < 5000 characters' do
+      subject.text = 'Valid Text' * 100
+      expect(subject).to be_valid
+    end
   end
 
   # Method tests
