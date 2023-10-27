@@ -24,9 +24,6 @@ RSpec.describe User, type: :model do
   describe '#recent_posts' do
     it 'returns the 3 most recent posts' do
       user = User.create(name: 'Roy Batty', posts_counter: 4)
-
-      post0 = user.posts.create(title: 'Post 0', text: 'hey', created_at: 3.days.ago, comments_counter: 0,
-                                likes_counter: 0)
       post1 = user.posts.create(title: 'Post 1', text: 'hey', created_at: 2.days.ago, comments_counter: 0,
                                 likes_counter: 0)
       post2 = user.posts.create(title: 'Post 2', text: 'hey', created_at: 1.day.ago, comments_counter: 0,
