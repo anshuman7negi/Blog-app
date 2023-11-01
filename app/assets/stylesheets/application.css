@@ -23,7 +23,6 @@
     justify-content: space-between;
     border: 2px solid black;
     padding: 35px;
-    width: 100%;
 }
 
 .user-details-link {
@@ -66,4 +65,41 @@
     padding: 0.5rem 0.6rem;
     box-shadow: 2px 2px;
     margin: 0 auto;
+}
+
+.post-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 35px;
+    width: 100%;
+}
+
+.comment-container {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 2px solid;
+    padding: 10px;
+}
+
+.full-post {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    gap: 1rem;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.name-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-and-comments {
+    padding: 3rem 2rem;
 }
