@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params.require(:post).permit(:title, :text))
-    @post.author = User.find(params[:user_id])
+    @post.author =  current_user
     @post.comments_counter = 0
     @post.likes_counter = 0
 
