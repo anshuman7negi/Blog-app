@@ -1,3 +1,7 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
 
 <div class="post-and-comments">
 <div class="full-post">
@@ -7,6 +11,7 @@
    </div>
    <div><%= @post.text %></div>
 </div>
+
 
     <% if @post.comments == [] %> 
       <p>There are no comments for this post.</p>
