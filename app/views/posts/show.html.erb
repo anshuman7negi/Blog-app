@@ -1,3 +1,7 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
 
 <div class="post-and-comments">
 <div class="full-post">
@@ -7,6 +11,17 @@
    </div>
    <div><%= @post.text %></div>
 </div>
+
+<div>
+      <%= form_with model: @like,url: user_post_likes_path(post_id: @post.id, user_id: @post.author_id), data: { turbo: false } do |form|%>
+          <%= form.submit 'Like post', class: 'submit' %>
+        <%end%>
+ </div>
+
+ <button class="see-all-post">
+    <%= link_to "Create new comment", new_user_post_comment_path(post_id: @post.id, user_id: @post.author_id) %>
+</button>
+
 
     <% if @post.comments == [] %> 
       <p>There are no comments for this post.</p>

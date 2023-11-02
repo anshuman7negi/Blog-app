@@ -7,6 +7,10 @@
          </div>
   </div>
 
+<button class="see-all-post">
+  <%= link_to "Create new post", new_user_post_path %>
+</button>
+
 
 <% if @posts.empty? %> 
   <div class="post-card">There are no posts by this user.</div>
