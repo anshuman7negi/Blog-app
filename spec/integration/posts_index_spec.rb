@@ -42,7 +42,6 @@ RSpec.describe 'User Posts Page', type: :system do
 
     click_button('Pagination')
     sleep(2)
-
     expect(current_path).to eq(user_post_path(@user, @post1))
   end
 
