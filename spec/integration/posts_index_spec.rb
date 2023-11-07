@@ -34,7 +34,7 @@ RSpec.describe 'User Posts Page', type: :system do
     expect(page).to have_content('This is the first post.')
     expect(page).to have_content("Comments: #{post.comments_counter}")
     expect(page).to have_content("Likes: #{post.likes_counter}")
-
+    expect(page).to have_content('Post2')
     expect(page).to have_content('Tom: Great post!')
     expect(page).to have_content('Tom: I love it!')
   end

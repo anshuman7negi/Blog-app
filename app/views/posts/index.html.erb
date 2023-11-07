@@ -20,6 +20,7 @@
   <div class="post-card">
     <div><%= link_to "Post  ##{index + 1}", user_post_path(post.author, post) %></div>
     <br>
+    <div><%= post.title %></div>
     <div><%= post.text %></div>
     <div class="comments_likes">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
   </div>
