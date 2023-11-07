@@ -24,7 +24,6 @@ RSpec.describe 'User Show Page', type: :system do
     expect(page).to have_content('Number of posts: 4')
     expect(page).to have_content('Teacher from Mexico')
 
-
     [@post4, @post3, @post2].each do |post|
       expect(page).to have_content(post.text)
     end
