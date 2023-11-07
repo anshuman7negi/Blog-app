@@ -6,12 +6,13 @@ RSpec.describe 'User Posts Page', type: :system do
     Post.destroy_all
 
     @user = User.create(name: 'Tom', bio: 'Teacher from Mexico.', posts_counter: 0, photo: 'https://example.com/user1.jpg')
-    @post1 = Post.create(author: @user, title: 'Post1', text: 'This is the first post.', comments_counter: 0, likes_counter: 0)
+    @post1 = Post.create(author: @user, title: 'Post1', text: 'This is the first post.', comments_counter: 0,
+                         likes_counter: 0)
   end
 
   scenario 'displays user profile information and no posts' do
     visit user_posts_path(@user)
-    
+
     expect(page).to have_selector("img[src*='https://example.com/user1.jpg']")
     expect(page).to have_content('Tom')
     expect(page).to have_content('Number of posts: 1')
@@ -22,10 +23,11 @@ RSpec.describe 'User Posts Page', type: :system do
   end
 
   scenario 'displays user posts with comments and likes' do
-    post = Post.create(author: @user, title: 'Post2', text: 'This is the second post.', comments_counter: 2, likes_counter: 5)
+    post = Post.create(author: @user, title: 'Post2', text: 'This is the second post.', comments_counter: 2,
+                       likes_counter: 5)
 
-    comment1 = Comment.create(post: post, user: @user, text: 'Great post!')
-    comment2 = Comment.create(post: post, user: @user, text: 'I love it!')
+    comment1 = Comment.create(post:, user: @user, text: 'Great post!')
+    comment2 = Comment.create(post:, user: @user, text: 'I love it!')
 
     visit user_posts_path(@user)
 
@@ -46,11 +48,12 @@ RSpec.describe 'User Posts Page', type: :system do
   end
 
   scenario 'click the user posts' do
-    last_post = Post.create(author: @user, title: 'last post', text: 'This is the last post.', comments_counter: 2, likes_counter: 5)
+    last_post = Post.create(author: @user, title: 'last post', text: 'This is the last post.', comments_counter: 2,
+                            likes_counter: 5)
     visit user_path(@user)
     click_link 'Post #1'
     sleep(2)
-    expect(current_path).to eq(user_post_path(@user,last_post))
+    expect(current_path).to eq(user_post_path(@user, last_post))
   end
 
   scenario 'click "Create new post" button' do

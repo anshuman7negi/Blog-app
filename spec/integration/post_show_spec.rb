@@ -6,13 +6,14 @@ RSpec.describe 'Post and Comments Page', type: :system do
     Post.destroy_all
 
     @user = User.create(name: 'Tom', bio: 'Teacher from Mexico.', posts_counter: 0, photo: 'https://example.com/user1.jpg')
-    @post = Post.create(author: @user, title: 'Post1', text: 'This is the first post.', comments_counter: 0, likes_counter: 0)
+    @post = Post.create(author: @user, title: 'Post1', text: 'This is the first post.', comments_counter: 0,
+                        likes_counter: 0)
   end
 
   scenario 'displays post information and no comments' do
     visit user_post_path(@user, @post)
 
-    expect(page).to have_content("Post #1 by Tom")
+    expect(page).to have_content('Post #1 by Tom')
     expect(page).to have_content("Comments: #{@post.comments_counter}")
     expect(page).to have_content("Likes: #{@post.likes_counter}")
     expect(page).to have_content('This is the first post.')
@@ -27,7 +28,7 @@ RSpec.describe 'Post and Comments Page', type: :system do
 
     visit user_post_path(@user, @post)
 
-    expect(page).to have_content("Post #1 by Tom")
+    expect(page).to have_content('Post #1 by Tom')
     expect(page).to have_content('Comments: 2, Likes: 0')
     expect(page).to have_content('This is the first post.')
     expect(page).to have_button('Like post')
@@ -44,9 +45,8 @@ RSpec.describe 'Post and Comments Page', type: :system do
     click_button('Like post')
     sleep(3)
     visit user_post_path(@user, @post)
-    updated_like_count = @post.reload.likes_counter 
+    updated_like_count = @post.reload.likes_counter
     expect(updated_like_count).to eq(initial_like_count + 1)
-
   end
 
   scenario 'click "Create new comment" button' do
@@ -57,5 +57,4 @@ RSpec.describe 'Post and Comments Page', type: :system do
 
     expect(current_path).to eq(new_user_post_comment_path(post_id: @post.id, user_id: @post.author_id))
   end
-
 end
