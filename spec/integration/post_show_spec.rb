@@ -23,8 +23,8 @@ RSpec.describe 'Post and Comments Page', type: :system do
   end
 
   scenario 'displays post information with comments and likes' do
-    comment1 = Comment.create(post: @post, user: @user, text: 'Great post!')
-    comment2 = Comment.create(post: @post, user: @user, text: 'I love it!')
+    Comment.create(post: @post, user: @user, text: 'Great post!')
+    Comment.create(post: @post, user: @user, text: 'I love it!')
 
     visit user_post_path(@user, @post)
 

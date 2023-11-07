@@ -26,8 +26,8 @@ RSpec.describe 'User Posts Page', type: :system do
     post = Post.create(author: @user, title: 'Post2', text: 'This is the second post.', comments_counter: 2,
                        likes_counter: 5)
 
-    comment1 = Comment.create(post:, user: @user, text: 'Great post!')
-    comment2 = Comment.create(post:, user: @user, text: 'I love it!')
+    Comment.create(post:, user: @user, text: 'Great post!')
+    Comment.create(post:, user: @user, text: 'I love it!')
 
     visit user_posts_path(@user)
 
