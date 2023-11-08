@@ -24,7 +24,8 @@
   <% end %>
 </div>
 <% end %>
-
+<% if @user.recent_posts.empty? == false %>
 <button class="all-post-btn"><%= link_to "See all posts", user_posts_path(@user) %></button>
+<% end %>
 
 </div>      
