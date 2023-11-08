@@ -103,3 +103,44 @@
 .post-and-comments {
   padding: 3rem 2rem;
 }
+
+.signup-container,
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.signup-container form,
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+}
+
+.signup-container input,
+.login-container input {
+  width: 100%;
+  border: 2px solid black;
+  padding: 4px;
+}
+
+.rember-me {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.rember-me input {
+  width: 6%;
+}
+
+.link-container {
+  display: flex;
+  gap: 10px;
+}
