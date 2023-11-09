@@ -27,5 +27,5 @@ class CommentsController < ApplicationController
       flash[:error] = 'Error: Comment could not be deleted'
     end
     redirect_to user_post_path(user, post)
-  end 
+  end
 end
