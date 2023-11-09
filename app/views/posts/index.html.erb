@@ -1,9 +1,24 @@
+<% if flash[:success] %>
+  <div class="alert alert-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% if flash[:error] %>
+  <div class="alert alert-danger">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
+
+
 <div class="user-post-container">
   <div class="user-container">
-        <%= image_tag @posts[0].author.photo, class: "profile-pic", alt: "User Profile Photo" %>
+        <%= image_tag @user.photo, class: "profile-pic", alt: "User Profile Photo" %>
          <div class="post-details">
-           <h1><%= @posts[0].author.name %></h1>
-           <p class="total-posts">Number of posts: <%= @posts[0].author.posts_counter %></p>
+           <h1><%= @user.name %></h1>
+           <p class="total-posts">Number of posts: <%= @user.posts_counter %></p>
+           <p>role: <%=@user.role %> </p>
          </div>
   </div>
 
@@ -23,6 +38,13 @@
     <div><%= post.title %></div>
     <div><%= post.text %></div>
     <div class="comments_likes">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></div>
+
+    <% if can? :destroy, post %>
+    <%= form_with url: user_post_path(@user, post), method: :delete do %>
+      <button class="see-all-post">Delete</button>
+    <% end %>
+  <% end %>
+
   </div>
 
 
@@ -37,7 +59,7 @@
    <% end %>
 
 <% end %>
+<button class="all-post-btn" ><%= link_to "Pagination", user_post_url(@posts[0].author, @posts[0]) %></button>
 <% end %>
 
-<button class="all-post-btn" ><%= link_to "Pagination", user_post_url(@posts[0].author, @posts[0]) %></button>
 
